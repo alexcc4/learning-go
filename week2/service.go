@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"log"
-	"week1/dao"
+	"week2/dao"
 )
 
 func GetUserByName(n string) interface{} {

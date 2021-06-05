@@ -1,4 +1,4 @@
-module week1
+module week2
 
 go 1.16
 
