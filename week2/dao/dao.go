@@ -12,6 +12,8 @@ type User struct {
 	age  int32
 }
 
+var RecordNotFoundError  = errors.New("Record not found")
+
 var (
 	db *sql.DB
 	e  error
@@ -25,7 +27,7 @@ func GetUser(n string) (user User, e error) {
 	e = row.Scan(&name, &age)
 	if e != nil {
 		message := fmt.Sprintf("user %s not found", n)
-		return User{}, errors.Wrap(sql.ErrNoRows, message)
+		return User{}, errors.Wrap(RecordNotFoundError, message)
 	}
 
 	user = User{name: name, age: age}

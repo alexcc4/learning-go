@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
 	"github.com/pkg/errors"
 	"log"
@@ -15,7 +14,7 @@ func GetUserByName(n string) interface{} {
 	// return nil or user struct
 	if err != nil {
 		// handler user not exist
-		if errors.Cause(err) == sql.ErrNoRows{
+		if errors.Cause(err) == dao.RecordNotFoundError{
 			fmt.Println(err)
 			return nil
 		}
