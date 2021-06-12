@@ -9,6 +9,7 @@
 ```bazaar
 ./week3
 ```
+- 访问 `http://127.0.0.1:8000/ping` 测试 `http` 服务
 - 手动 `ctrl + c` 或者 `kill {pid}` 即可退出
 > 注意： 若直接 ```go run server.go```, 在发送 `kill {pid}` 命令的时候，子进程（时间打印）将不会停止
 
